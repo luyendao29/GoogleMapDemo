@@ -57,8 +57,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelegate 
     
     
     
-    let viDo = 21.033898
-    let kinhDo = 105.767630
+    var viDo = 21.033898
+    var kinhDo = 105.767630
     
     let dropDown = DropDown()
     
@@ -90,6 +90,40 @@ class ViewController: UIViewController, GMSMapViewDelegate, UITextFieldDelegate 
         super.viewDidAppear(true)
         DropDown.startListeningToKeyboard()
         loadMap()
+    }
+    
+    //function to convert the given UIView into a UIImage
+    func imageWithView(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
+    func createMarker(latitude: Double, longitude: Double) {
+        guard let mapView = viewMap else { return }
+        mapView.clear()
+        let marker = GMSMarker()
+        
+        // I have taken a pin image which is a custom image
+        let markerImage = UIImage(named: "mapMarker")!.withRenderingMode(.alwaysTemplate)
+        
+        //creating a marker view
+        let markerView = UIImageView(image: markerImage)
+        
+        //changing the tint color of the image
+        markerView.tintColor = UIColor.red
+        
+        // marker.position = CLLocationCoordinate2D(latitude: 28.7041, longitude: 77.1025)
+        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        marker.iconView = markerView
+        marker.title = "New Delhi" + "\n" + "Dau Buoi"
+        marker.snippet = "India"
+        marker.map = mapView
+        
+        //comment this line if you don't wish to put a callout bubble
+        mapView.selectedMarker = marker
     }
     
     func baseSetting() {
@@ -321,6 +355,8 @@ extension ViewController {
     
     //Coordinate in 4 corner map screen
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        
+        
         //        let projection = mapView.projection.visibleRegion()
         //
         //        let topLeftCorner: CLLocationCoordinate2D = projection.farLeft
@@ -333,8 +369,12 @@ extension ViewController {
         //        x2 = bottomRightCorner.latitude
         //        y2 = bottomRightCorner.longitude
         //
-        //        let latitude = mapView.camera.target.latitude
-        //        let longitude = mapView.camera.target.longitude
+                viDo = mapView.camera.target.latitude
+                kinhDo = mapView.camera.target.longitude
+        
+            createMarker(latitude: viDo, longitude: kinhDo)
+        
+        
         //        let centerMapCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         //        self.placeMarkerOnCenter(centerMapCoordinate: centerMapCoordinate)
         //        print("Toạ độ: ", topLeftCorner, topRightCorner, bottomLeftCorner, bottomRightCorner)

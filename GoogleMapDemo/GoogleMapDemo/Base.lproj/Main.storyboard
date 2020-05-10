@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Mt-1V-hrG">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -152,6 +152,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loz-tK-zi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="28.794642857142854"/>
+        </scene>
+        <!--MakerVC-->
+        <scene sceneID="rzj-xk-DBH">
+            <objects>
+                <viewController id="6Mt-1V-hrG" customClass="MakerVC" customModule="GoogleMapDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKj-z8-cva">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rh1-KF-yZe" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uV-kc-ItO">
+                                <rect key="frame" x="184" y="824" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="danhDau:" destination="6Mt-1V-hrG" eventType="touchUpInside" id="nC6-wm-Qjg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rh1-KF-yZe" firstAttribute="leading" secondItem="a05-3F-P6I" secondAttribute="leading" id="0AS-gG-uJX"/>
+                            <constraint firstItem="a05-3F-P6I" firstAttribute="trailing" secondItem="rh1-KF-yZe" secondAttribute="trailing" id="6yU-wl-qGe"/>
+                            <constraint firstItem="7uV-kc-ItO" firstAttribute="centerX" secondItem="BKj-z8-cva" secondAttribute="centerX" id="7BY-Fi-zkO"/>
+                            <constraint firstItem="a05-3F-P6I" firstAttribute="bottom" secondItem="7uV-kc-ItO" secondAttribute="bottom" constant="8" id="Fkn-vj-SHh"/>
+                            <constraint firstItem="rh1-KF-yZe" firstAttribute="top" secondItem="a05-3F-P6I" secondAttribute="top" id="TOw-Ee-7ef"/>
+                            <constraint firstItem="a05-3F-P6I" firstAttribute="bottom" secondItem="rh1-KF-yZe" secondAttribute="bottom" id="aMW-G1-gdz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a05-3F-P6I"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="rh1-KF-yZe" id="LFj-kt-dix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajF-bf-S5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757" y="29"/>
         </scene>
     </scenes>
     <resources>

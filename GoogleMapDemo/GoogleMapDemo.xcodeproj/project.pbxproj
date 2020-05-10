@@ -13,6 +13,10 @@
 		818CA4362430D10D00456B51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818CA4342430D10D00456B51 /* Main.storyboard */; };
 		818CA4382430D10E00456B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818CA4372430D10E00456B51 /* Assets.xcassets */; };
 		818CA43B2430D10E00456B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 818CA4392430D10E00456B51 /* LaunchScreen.storyboard */; };
+		8192D39C2467F61D0010DBA9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192D39B2467F61D0010DBA9 /* ProfileView.swift */; };
+		8192D39E2467F8900010DBA9 /* MakerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192D39D2467F8900010DBA9 /* MakerVC.swift */; };
+		8192D3A02467F9260010DBA9 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8192D39F2467F9260010DBA9 /* CustomInfoWindow.swift */; };
+		8192D3A22467F92D0010DBA9 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8192D3A12467F92D0010DBA9 /* CustomInfoWindow.xib */; };
 		DD6050A3F913E9A67F203374 /* Pods_GoogleMapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462FE236C006E94D6A2CD32 /* Pods_GoogleMapDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		818CA4372430D10E00456B51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818CA43A2430D10E00456B51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		818CA43C2430D10E00456B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8192D39B2467F61D0010DBA9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8192D39D2467F8900010DBA9 /* MakerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerVC.swift; sourceTree = "<group>"; };
+		8192D39F2467F9260010DBA9 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
+		8192D3A12467F92D0010DBA9 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		90493A0636617322CF804576 /* Pods-GoogleMapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapDemo.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapDemo/Pods-GoogleMapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E4B61B99BBD5D70EE4F47561 /* Pods-GoogleMapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapDemo.release.xcconfig"; path = "Target Support Files/Pods-GoogleMapDemo/Pods-GoogleMapDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,13 +81,25 @@
 			children = (
 				818CA4302430D10C00456B51 /* AppDelegate.swift */,
 				813080A22430D8DF00B83146 /* ChiDuongVCViewController.swift */,
+				8192D39B2467F61D0010DBA9 /* ProfileView.swift */,
 				818CA4322430D10C00456B51 /* ViewController.swift */,
+				8192D39D2467F8900010DBA9 /* MakerVC.swift */,
+				8192D3A32467FF8A0010DBA9 /* CustomInfoWindow */,
 				818CA4342430D10D00456B51 /* Main.storyboard */,
 				818CA4372430D10E00456B51 /* Assets.xcassets */,
 				818CA4392430D10E00456B51 /* LaunchScreen.storyboard */,
 				818CA43C2430D10E00456B51 /* Info.plist */,
 			);
 			path = GoogleMapDemo;
+			sourceTree = "<group>";
+		};
+		8192D3A32467FF8A0010DBA9 /* CustomInfoWindow */ = {
+			isa = PBXGroup;
+			children = (
+				8192D39F2467F9260010DBA9 /* CustomInfoWindow.swift */,
+				8192D3A12467F92D0010DBA9 /* CustomInfoWindow.xib */,
+			);
+			path = CustomInfoWindow;
 			sourceTree = "<group>";
 		};
 		ACB9FF9041C1322BDA952E93 /* Pods */ = {
@@ -152,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8192D3A22467F92D0010DBA9 /* CustomInfoWindow.xib in Resources */,
 				818CA43B2430D10E00456B51 /* LaunchScreen.storyboard in Resources */,
 				818CA4382430D10E00456B51 /* Assets.xcassets in Resources */,
 				818CA4362430D10D00456B51 /* Main.storyboard in Resources */,
@@ -224,8 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8192D39E2467F8900010DBA9 /* MakerVC.swift in Sources */,
+				8192D39C2467F61D0010DBA9 /* ProfileView.swift in Sources */,
 				818CA4332430D10C00456B51 /* ViewController.swift in Sources */,
 				818CA4312430D10C00456B51 /* AppDelegate.swift in Sources */,
+				8192D3A02467F9260010DBA9 /* CustomInfoWindow.swift in Sources */,
 				813080A32430D8DF00B83146 /* ChiDuongVCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
